@@ -1,24 +1,27 @@
-# Use the official Python 3.11 slim image (recommended for smaller image size)
-FROM python:3.11-slim
+FROM python:3.8-slim-buster
 
-# Set the working directory within the container to /app
+# Install required packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    postgresql-client \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the working directory
 WORKDIR /app
 
 # Copy requirements.txt and install dependencies
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
-# Copy your project code
-COPY . .  
-# Ensures project files are copied to the working directory
+# Copy the application code
+COPY . .
 
-# Set the correct Django settings module environment variable
-ENV DJANGO_SETTINGS_MODULE=myprojecttlt.settings  
-# Replace 'myproject' with your actual project name
+# Set environment variables
+ENV DJANGO_SETTINGS_MODULE=myprojecttlt.settings
+ENV PYTHONUNBUFFERED=1
 
-# Expose the Django development server port (optional, but recommended for accessibility)
-EXPOSE 8000  
-# Exposes port 8000 for server access
+# Expose the port
+EXPOSE 8000
 
-# Run the Django development server (use `gunicorn` for production)
-CMD ["python", "manage.py", "runserver"]
+# Run the Django development server
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
