@@ -1,0 +1,3 @@
+django
+gunicorn
+psycopg2-binary  # for connecting to a PostgreSQL database

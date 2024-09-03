@@ -1,14 +1,18 @@
-FROM python:3.4
+# Use the official Python 3.11 image
+FROM python:3.11-slim
 
-RUN apt-get update \
-	&& apt-get install -y --no-install-recommends \
-		postgresql-client \
-	&& rm -rf /var/lib/apt/lists/*
+# Set the workdir to /app
+WORKDIR /tltapp
 
-WORKDIR /usr/src/app
+# Copy requirements.txt and install
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
-COPY . .
 
-EXPOSE 8000
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Copy the project code
+COPY . ./
+
+# Set the environment variable
+ENV DJANGO_SETTINGS_MODULE=myproject.settings
+
+# Run the Django development server
+CMD ["python", "manage.py", "runserver"]
