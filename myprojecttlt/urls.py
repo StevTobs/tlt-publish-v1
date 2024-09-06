@@ -21,8 +21,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('tltapp.urls')),
-    path('',include('loginapp.urls')),
-    path('',include('landingapp.urls')),
+    path('', include('tltapp.urls')),         # Access tltapp at /tlt/
+    path('', include('loginapp.urls')),     # Access loginapp at /login/
+    path('', include('landingapp.urls')),         # Access landingapp at root /
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

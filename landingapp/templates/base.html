@@ -32,6 +32,7 @@
 
 </head>
 
+
 <body>
     <!-- START  NAVBAR -->
     <nav class="navbar navbar-expand-lg  navbar-white fixed-top navbar-custom sticky sticky-light" id="navbar">
@@ -52,22 +53,25 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ms-auto" id="navbar-navlist">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="/">หน้าแรก</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" href="/login">ลงชื่อเข้าใช้งาน</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#related_services">บริการของเรา</a>
+                    </li>
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#features">Product</a>
-                    </li>
+                    </li> -->
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#client">send to repair</a>
                     </li> -->
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#pricing">Pricing</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#contact">ติดต่อเรา</a>
                     </li>
                 </ul>
             </div>
@@ -77,30 +81,11 @@
 
     {% block content %}
 
+
+
+
     {% endblock content %}
 
-    <!-- START FOOTER -->
-    <section class="bg-footer bg-light">
-      <div class="container">
-          <div class="row text-center">
-              <div class="col-md-6">
-                  <div class="text-sm-start mt-3 mt-sm-0">
-                      <img src="static/images/CHECK3.png" alt="" height="40" />
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="text-sm-end mt-3 mt-sm-0">
-                      <p class="text-muted mb-0">
-                          <script>
-                              document.write(new Date().getFullYear())
-                          </script> © Zoise. Design by <a href="https://pichforest.com/" class="text-muted fw-bold"
-                              target="_blank">Bonus</a>
-                      </p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
   <!-- END FOOTER -->
 
   <!-- bootstrap -->
@@ -113,5 +98,39 @@
   <script src="{% static 'assets/js/app.js' %}"></script>
   <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </body>
+
+
+<footer>
+
+    <!-- START FOOTER -->
+    <section class="bg-footer bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <div class="text-sm-start mt-3 mt-sm-0">
+                        <img src="static/images/CHECK3.png" alt="" height="40" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-sm-end mt-3 mt-sm-0">
+                        <p class="text-muted mb-0">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © Design by <a href="https://www.facebook.com/people/Tam-Lay-Thong/61563366941693/" class="text-muted fw-bold"
+                                target="_blank">TLT</a>
+                        </p>
+                        <!-- <p class="text-muted mb-0">
+                          <script>
+                              document.write(new Date().getFullYear())
+                          </script> © Zoise. Design by <a href="https://pichforest.com/" class="text-muted fw-bold"
+                              target="_blank">Bonus</a>
+                      </p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</footer>
 
 </html>

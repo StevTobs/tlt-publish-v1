@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ประเมินพื้นที่</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Free Admin & Dashboard Template" name="description" />
+    <meta content="Pichforest" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+
+    <!-- plugin css -->
+    <link href="{% static 'assets/libs/jsvectormap/css/jsvectormap.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Css -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{% static 'assets/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{% static 'assets/css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="mx-auto" style="margin-top: 100px; margin-left: 50px; margin-right: 50px;">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header justify-content-between d-flex align-items-center" style="background-color: #2f4f4f">
+            <h4 class="card-title" style="color: #fff">กรอกข้อมูลลงทะเบียนใช้งาน</h4>
+          </div>
+          <!-- end card header -->
+          <form method="post" action="form">
+            {% csrf_token %}
+            <div class="card-body">
+              <div class="row">
+                <div class="col-xl-6">
+                  <div class="mb-3 row">
+                    <label for="username" class="col-md-2 col-form-label">Username</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="text" placeholder="โปรดระบุ username" id="username" name="username" />
+                    </div>
+                  </div>
+
+                  <div class="mb-3 row">
+                    <label for="password" class="col-md-2 col-form-label">Password</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="password" placeholder="โปรดระบุ password" id="password" name="password" />
+                    </div>
+                  </div>
+
+                  <div class="mb-3 row">
+                    <label for="first_name" class="col-md-2 col-form-label">ชื่อ</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="text" id="first_name" name="first_name" />
+                    </div>
+                  </div>
+
+                  <div class="mb-3 row">
+                    <label for="last_name" class="col-md-2 col-form-label">นามสกุล</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="text" id="last_name" name="last_name" />
+                    </div>
+                  </div>
+
+                  <div class="mb-3 row">
+                    <label for="province" class="col-md-2 col-form-label">จังหวัด</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="text" id="province" name="province" />
+                    </div>
+                  </div>
+
+                  <div class="mb-3 row">
+                    <label for="job" class="col-md-2 col-form-label">อาชีพ</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="text" id="job" name="job" />
+                    </div>
+                  </div>
+
+                  <div class="mb-3 row">
+                    <label for="tel" class="col-md-2 col-form-label">เบอร์โทรศัพท์</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="text" id="tel" name="tel" />
+                    </div>
+                  </div>
+
+                  <div class="mb-3 row">
+                    <label for="email" class="col-md-2 col-form-label">Email</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="email" id="email" name="email" />
+                    </div>
+                  </div>
+
+                  <div class="mb-2 mt-3">
+                    <button type="submit" class="btn" style="background-color: #2f4f4f; color: #fff">ลงทะเบียน</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end card body -->
+          </form>
+        </div>
+        <!-- end card -->
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="{% static 'assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/libs/simplebar/simplebar.min.js' %}"></script>
+    <script src="{% static 'assets/libs/feather-icons/feather.min.js' %}"></script>
+    <script src="{% static 'assets/js/app.js' %}"></script>
+  </body>
+</html>
